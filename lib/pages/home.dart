@@ -1,40 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  Color _seedColor = Colors.pink;
-
-  void _changeColor(Color color) {
-    setState(() {
-      _seedColor = color;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '2021479037',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: _seedColor),
-      ),
-      home: MyHomePage(
-        title: 'la casa',
-        onChangeColor: () => _changeColor(Colors.green),
-      ),
-    );
-  }
-}
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title, required this.onChangeColor});
 
@@ -76,6 +41,29 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/Pixel-Art-Hot-Pepper-2-1.webp',
+                  width: 100,
+                  height: 100,
+                ),
+                const SizedBox(width: 16),
+                Image.asset(
+                  'assets/Pixel-Art-Pizza-2.webp',
+                  width: 100,
+                  height: 100,
+                ),
+                const SizedBox(width: 16),
+                Image.asset(
+                  'assets/Pixel-Art-Watermelon-3.webp',
+                  width: 100,
+                  height: 100,
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
             const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
